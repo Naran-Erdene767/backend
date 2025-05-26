@@ -14,8 +14,8 @@ app.use(cors());
 const db = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "test",
-  database: "backEnd",
+  password: "Nest123$",
+  database: "hicheel",
 });
 
 // MySQL-тэй холбогдож байгаа эсэхийг шалгах

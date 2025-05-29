@@ -15,7 +15,7 @@ const db = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "Nest123$",
-  database: "hicheel",
+  database: "Hicheel",
 });
 
 // MySQL-тэй холбогдож байгаа эсэхийг шалгах
@@ -52,6 +52,14 @@ app.post("/createUsers", (req, res) => {
     }
   );
 });
+
+app.get("/getUsers", (req, res) => {
+  db.query("SELECT * FROM users", (err, results) => {
+    if (err) return res.status(500).json({ error: err.message });
+    res.json(results);
+  });
+});
+
 
 // Сервер эхлүүлэх
 app.listen(PORT, () => {
